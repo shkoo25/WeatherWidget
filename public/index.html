@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html ng-app="weatherApp">
+  <head>
+    <title>weather</title>
+    <link href="index.css" rel="stylesheet" />
+  </head> 
+  <body>
+
+    <div class = "container">
+        
+     
+      <div ng-controller ="weatherController" class = "weatherArea">
+        <div ng-repeat = "forecast in forecasts">
+          <div class = "title"> {{ forecast.results.channel.item.title }}  </div>
+
+          <div class = "temperature"> {{ forecast.results.channel.item.condition.temp}}&#176 <img src = "http://l.yimg.com/a/i/us/we/52/28.gif"/>
+            <div class ="condition"> {{ forecast.results.channel.item.condition.text}}</div>
+          </div>
+              <div class = "weather-container">
+
+                    <div class ="days">
+                      <div class = "day">{{ forecast.results.channel.item.forecast[0].day}}</div>
+                        <div class = "temp">{{ forecast.results.channel.item.forecast[0].high}}&#176 / {{forecast.results.channel.item.forecast[0].low}}&#176
+                        </div>
+                    </div>
+
+                    <div class = "days">
+                      <div class = "day">{{ forecast.results.channel.item.forecast[1].day}}</div>
+                        <div class = "temp">{{ forecast.results.channel.item.forecast[1].high}}&#176 / {{forecast.results.channel.item.forecast[1].low}}&#176</div>
+                    </div>
+
+                    <div class = "days">
+                      <div class = "day">{{ forecast.results.channel.item.forecast[2].day}}</div>
+                        <div class = "temp">{{ forecast.results.channel.item.forecast[2].high}}&#176 / {{forecast.results.channel.item.forecast[2].low}}&#176</div>
+                    </div>
+
+                    <div class = "days">
+                      <div class = "day">{{ forecast.results.channel.item.forecast[3].day}}</div>
+                        <div class = "temp">{{ forecast.results.channel.item.forecast[3].high}}&#176 / {{forecast.results.channel.item.forecast[3].low}}&#176</div>
+                    </div>
+
+                    <div class = "days">
+                      <div class = "day">{{ forecast.results.channel.item.forecast[4].day}}</div>
+                        <div class = "temp">{{ forecast.results.channel.item.forecast[4].high}}&#176 / {{forecast.results.channel.item.forecast[4].low}}&#176</div>
+                    </div>
+                </div>
+            
+
+
+        </div>
+      </div>
+
+     
+
+    </div>      
+
+   
+    <script src="libs/angular.js"></script>
+    <script src="index.js"></script>
+    
+  </body>
+</html>
